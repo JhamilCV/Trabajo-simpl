@@ -1,0 +1,29 @@
+saldo = 5.00
+contador = 0
+productos = ["Papas", "Chocolate", "Refresco"]
+precios = [1.50, 2.00, 2.50]
+while saldo > 0:
+    print("MAQUINA DE COMIDA")
+    print("Tu saldo actual es: Bs.", saldo)
+    print("1. Papas Bs.1.50")
+    print("2. Chocolate Bs.2.00")
+    print("3. Refresco Bs.2.50")
+    print("4. Salir")
+    op = int(input("Ingrese una opcion: "))
+    if op == 4:
+        print("Gracias por su compra")
+        break
+    if 1 <= op <= 3:
+        costo = precios[op - 1]
+        if saldo >= costo:
+            saldo -= costo
+            contador += 1
+            print("Has comprado", productos[op - 1])
+        else:
+            print("Saldo insuficiente")
+    else:
+        print("No existe la opcion")
+    if saldo <= 0:
+        print("No tienes saldo")
+print("Total de productos comprados:", contador)
+print("Saldo final: Bs.", saldo)
